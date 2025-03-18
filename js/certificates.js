@@ -106,7 +106,7 @@ function setupCertificateSystem() {
                                     <i class="fas fa-certificate fa-5x"></i>
                                 </div>
                                 <h3 id="certificateTitle">عنوان الشهادة</h3>
-                                <p>تشهد Vyrlo أن</p>
+                                <p>يشهد Mohamed Almasri أن</p>
                                 <h4 id="certificateUserName">اسم المتعلم</h4>
                                 <p id="certificateDescription">وصف الإنجاز</p>
                                 <div class="certificate-date">
