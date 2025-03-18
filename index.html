@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تتبع تقدمك في تعلم React.js مع أداة تتبع احترافية تساعدك على تحقيق أهدافك التعليمية خطوة بخطوة">
+    <meta name="keywords" content="React.js, تعلم البرمجة, خارطة طريق, JavaScript, تتبع التقدم">
+    <meta name="author" content="Vyrlo">
+    <meta name="theme-color" content="#282c34">
+    <meta property="og:title" content="خارطة تعلم React.js">
+    <meta property="og:description" content="تتبع تقدمك في تعلم React.js مع أداة تتبع احترافية">
+    <meta property="og:image" content="assets/images/react-logo.svg">
+    <meta property="og:url" content="#">
+    <meta property="og:type" content="website">
+    <title>خارطة تعلم React.js</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/images/react-logo.svg">
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add PWA support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="React Tracker">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/react-logo.svg" alt="React Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                تعلم React.js
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-home"></i> الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#roadmap"><i class="fas fa-map"></i> خارطة الطريق</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#progress"><i class="fas fa-chart-line"></i> تقدمي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources"><i class="fas fa-book"></i> مصادر التعلم</a>
+                    </li>
+                    <!-- Additional navigation items will be added by JavaScript -->
+                </ul>
+                <div class="d-flex">
+                    <button id="userSettingsBtn" class="btn btn-outline-light">
+                        <i class="fas fa-user-cog"></i> الإعدادات
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section py-5 text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold text-primary mb-4">رحلتك لإتقان React.js</h1>
+                    <p class="lead mb-4">راقب تقدمك وحقق أهدافك خطوة بخطوة مع نظام التتبع المتكامل</p>
+                    <div class="progress overall-progress mb-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="totalProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="text-muted mb-4" id="progressText">0% مكتمل</p>
+                    <button class="btn btn-primary btn-lg px-5" id="startBtn"><i class="fas fa-play me-2"></i> ابدأ التعلم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Stats -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="card stats-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-tasks fa-2x text-primary mb-3"></i>
+                            <h5>مهارات مكتملة</h5>
+                            <h2 id="completedSkills">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stats-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-code fa-2x text-success mb-3"></i>
+                            <h5>مهارات قيد التعلم</h5>
+                            <h2 id="inProgressSkills">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stats-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-clock fa-2x text-warning mb-3"></i>
+                            <h5>ساعات الدراسة</h5>
+                            <h2 id="studyHours">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stats-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-trophy fa-2x text-danger mb-3"></i>
+                            <h5>إنجازات</h5>
+                            <h2 id="achievements">0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-map-marked-alt me-2"></i>خارطة طريق تعلم React.js</h2>
+            
+            <!-- Phases Tabs -->
+            <ul class="nav nav-pills mb-4 justify-content-center custom-tabs" id="phasesTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="phase1-tab" data-bs-toggle="pill" data-bs-target="#phase1" type="button">المرحلة الأولى: التأسيس</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="phase2-tab" data-bs-toggle="pill" data-bs-target="#phase2" type="button">المرحلة الثانية: البناء</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="phase3-tab" data-bs-toggle="pill" data-bs-target="#phase3" type="button">المرحلة الثالثة: التفاعل</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="phase4-tab" data-bs-toggle="pill" data-bs-target="#phase4" type="button">المرحلة الرابعة: التحسين</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="phase5-tab" data-bs-toggle="pill" data-bs-target="#phase5" type="button">المرحلة الخامسة: النشر</button>
+                </li>
+            </ul>
+            
+            <!-- Phases Content -->
+            <div class="tab-content" id="phasesTabContent">
+                <!-- Phase 1 -->
+                <div class="tab-pane fade show active" id="phase1" role="tabpanel">
+                    <!-- فقط ترك div فارغ ليتم ملؤه بواسطة JavaScript -->
+                </div>
+                
+                <!-- Phase 2, 3, 4, 5 content will be populated dynamically -->
+                <div class="tab-pane fade" id="phase2" role="tabpanel"></div>
+                <div class="tab-pane fade" id="phase3" role="tabpanel"></div>
+                <div class="tab-pane fade" id="phase4" role="tabpanel"></div>
+                <div class="tab-pane fade" id="phase5" role="tabpanel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Visualization -->
+    <section id="progress" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-chart-pie me-2"></i>تحليل تقدمك</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">التقدم حسب المراحل</h4>
+                            <canvas id="phasesProgressChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">مستوى المهارات</h4>
+                            <canvas id="skillsRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">نشاط التعلم</h4>
+                            <div class="activity-timeline" id="activityTimeline">
+                                <!-- Will be populated by JavaScript -->
+                                <p class="text-center text-muted">لم تسجل أي نشاط بعد</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-book me-2"></i>مصادر مفيدة للتعلم</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-video text-danger me-2"></i>دورات تعليمية</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="https://www.youtube.com/playlist?list=PLtFbQRDJ11kEjXWZmwkOV-vfXmrEEsuEW" target="_blank">سلسلة React.js بالعربي - كودزيلا</a></li>
+                                <li class="list-group-item"><a href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/" target="_blank">React - The Complete Guide (Udemy)</a></li>
+                                <li class="list-group-item"><a href="https://www.youtube.com/playlist?list=PLQtNtS-WfRa9LbmD8ON7rWhn-AtKTGdkn" target="_blank">دورة React للمبتدئين - أكاديمية حسوب</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-file-alt text-primary me-2"></i>وثائق رسمية</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="https://ar.reactjs.org/docs/getting-started.html" target="_blank">التوثيق الرسمي لـReact بالعربية</a></li>
+                                <li class="list-group-item"><a href="https://developer.mozilla.org/ar/docs/Web/JavaScript" target="_blank">MDN Web Docs - JavaScript</a></li>
+                                <li class="list-group-item"><a href="https://reactrouter.com/docs/en/v6" target="_blank">React Router</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-laptop-code text-success me-2"></i>منصات تطبيق عملي</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="https://codesandbox.io/" target="_blank">CodeSandbox</a></li>
+                                <li class="list-group-item"><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+                                <li class="list-group-item"><a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Settings Modal -->
+    <div class="modal fade" id="userSettingsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-user-cog me-2"></i>إعدادات المستخدم</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="userSettingsForm">
+                        <div class="mb-3">
+                            <label for="userName" class="form-label">اسم المستخدم</label>
+                            <input type="text" class="form-control" id="userName" placeholder="أدخل اسمك">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">المظهر</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="theme" id="themeLight" value="light" checked>
+                                <label class="form-check-label" for="themeLight">
+                                    <i class="fas fa-sun me-2"></i>فاتح
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="theme" id="themeDark" value="dark">
+                                <label class="form-check-label" for="themeDark">
+                                    <i class="fas fa-moon me-2"></i>داكن
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الإشعارات</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="notificationsEnabled" checked>
+                                <label class="form-check-label" for="notificationsEnabled">تفعيل الإشعارات</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">حفظ البيانات</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="useLocalStorage" checked>
+                                <label class="form-check-label" for="useLocalStorage">حفظ التقدم محليًا</label>
+                            </div>
+                            <div class="form-text text-muted">يتم تخزين تقدمك بشكل آمن على جهازك</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="resetDataBtn">
+                        <i class="fas fa-trash-alt me-2"></i>إعادة ضبط البيانات
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" id="saveSettingsBtn">حفظ التغييرات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="#" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p>تم بناء هذا الموقع بواسطة <span class="text-primary">Vyrlo</span> &copy; <span id="currentYear"></span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Optional: For certificate downloads -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/init.js"></script>
+    <script src="js/skills-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/certificates.js"></script>
+    <script src="js/pomodoro.js"></script>
+    <script src="js/goals.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/data-integration.js"></script>
+    <script src="js/welcome.js"></script>
+    <script src="js/user-guide.js"></script>
+    <script src="js/integration-check.js"></script>
+    <script src="js/debug.js"></script>
+    
+    <!-- Register Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+/* General Styles */
+:root {
+    --primary-color: #61dafb;
+    --secondary-color: #282c34;
+    --accent-color: #f9cf00;
+    --success-color: #4caf50;
+    --danger-color: #f44336;
+    --warning-color: #ff9800;
+    --info-color: #2196f3;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f8f9fa;
+}
+
+/* Custom Bootstrap Overrides */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #49c2e7;
+    border-color: #49c2e7;
+    color: var(--dark-color);
+}
+
+.bg-primary {
+    background-color: var(--secondary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/react-bg-pattern.svg');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.overall-progress {
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.overall-progress .progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* Stats Cards */
+.stats-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.stats-card h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+/* Roadmap Section */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(97, 218, 251, 0.1);
+    color: var(--dark-color);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(97, 218, 251, 0.5);
+}
+
+.nav-pills .nav-link {
+    color: var(--dark-color);
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 8px 20px;
+    margin: 0 5px;
+    transition: all 0.2s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.skill-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Progress Visualization Section */
+.activity-timeline {
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    padding: 10px 15px;
+    border-left: 3px solid var(--primary-color);
+    margin-bottom: 15px;
+    background-color: #f8f9fa;
+    border-radius: 0 5px 5px 0;
+}
+
+.activity-item .activity-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Resources Section */
+.resource-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.list-group-item a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.list-group-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer a {
+    transition: all 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-pills .nav-link {
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+    
+    .stats-card h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        padding: 40px 0;
+    }
+}
+
+/* Animation for React icon */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-react {
+    animation: spin 10s linear infinite;
+}
+
+/* Progress Levels */
+.progress-level-0 .progress-bar { background-color: #dc3545; width: 0%; }
+.progress-level-25 .progress-bar { background-color: #ffc107; width: 25%; }
+.progress-level-50 .progress-bar { background-color: #fd7e14; width: 50%; }
+.progress-level-75 .progress-bar { background-color: #17a2b8; width: 75%; }
+.progress-level-100 .progress-bar { background-color: #28a745; width: 100%; }
+
+/* Achievement Notifications */
+.achievement-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.achievement-notification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--primary-color);
+}
+
+.achievement-notification.show {
+    transform: translateX(0);
+}
+
+.achievement-content {
+    display: flex;
+    align-items: center;
+}
+
+.achievement-content i {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.achievement-content h5 {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.achievement-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Progress Buttons */
+.progress-buttons {
+    display: none; /* Hidden by default, shown on hover */
+}
+
+.skill-item:hover .progress-buttons {
+    display: block;
+}
+
+.progress-btn {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    margin-right: 2px;
+}
+
+.progress-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* Study timer styles */
+.study-timer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.study-timer i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

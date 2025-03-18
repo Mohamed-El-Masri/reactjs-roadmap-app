@@ -1,0 +1,24 @@
+{
+  "name": "خارطة تعلم React.js",
+  "short_name": "React Tracker",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/images/react-logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#282c34",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "description": "تتبع تقدمك في تعلم React.js مع نظام تتبع متكامل",
+  "lang": "ar-SA",
+  "dir": "rtl"
+}

@@ -1,0 +1,172 @@
+/* React Learning Progress Tracker - Dark Mode Theme */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Navigation */
+.dark-mode .navbar {
+    background-color: #1a1a1a !important;
+}
+
+/* Hero Section in dark mode */
+.dark-mode .hero-section {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .hero-section h1 {
+    color: #61dafb;
+}
+
+/* Cards in dark mode */
+.dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode .card-body {
+    color: #e0e0e0;
+}
+
+.dark-mode .bg-light {
+    background-color: #161616 !important;
+}
+
+.dark-mode .text-muted {
+    color: #adb5bd !important;
+}
+
+/* Skills and roadmap */
+.dark-mode .skill-item {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .list-group-item {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+.dark-mode .list-group-item a {
+    color: #e0e0e0;
+}
+
+.dark-mode .accordion-button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.dark-mode .accordion-button:not(.collapsed) {
+    background-color: rgba(97, 218, 251, 0.15);
+    color: #61dafb;
+}
+
+.dark-mode .accordion-body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Modals in dark mode */
+.dark-mode .modal-content {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.dark-mode .modal-header, .dark-mode .modal-footer {
+    border-color: #444;
+}
+
+/* Forms in dark mode */
+.dark-mode .form-control {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+.dark-mode .form-check-input:checked {
+    background-color: #61dafb;
+    border-color: #61dafb;
+}
+
+.dark-mode .form-check-input:not(:checked) {
+    background-color: #333;
+    border-color: #555;
+}
+
+/* Progress bars */
+.dark-mode .progress {
+    background-color: #444;
+}
+
+/* Activities and badges */
+.dark-mode .activity-item {
+    background-color: #2a2a2a;
+    border-left-color: #61dafb;
+}
+
+/* Input placeholders */
+.dark-mode input::placeholder, 
+.dark-mode textarea::placeholder {
+    color: #888;
+}
+
+/* Pomodoro timer */
+.dark-mode .pomodoro-panel {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Stats cards with hover effect */
+.dark-mode .stats-card:hover {
+    background-color: #252525;
+}
+
+/* Buttons */
+.dark-mode .btn-outline-secondary {
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+    background-color: #444;
+    color: #fff;
+    border-color: #777;
+}
+
+/* Certificate styling */
+.dark-mode .certificate {
+    background-color: #1a1a1a;
+    border-color: #61dafb;
+}
+
+/* Custom tabs */
+.dark-mode .nav-pills .nav-link {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-pills .nav-link.active {
+    background-color: #61dafb;
+    color: #121212;
+}
+
+/* Table styles */
+.dark-mode table {
+    color: #e0e0e0;
+}
+
+.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Resource cards */
+.dark-mode .resource-card:hover {
+    transform: translateY(-5px);
+    background-color: #252525;
+}
+
+/* Notifications */
+.dark-mode .achievement-notification {
+    background-color: #2a2a2a;
+    border-right: 4px solid #61dafb;
+}
